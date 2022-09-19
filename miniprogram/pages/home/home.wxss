@@ -1,0 +1,84 @@
+.f-calendar {
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: #fff;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 14px;
+  box-shadow: 0 2px 13px 0 rgba(255, 255, 255, 0.8)
+}
+
+/* 每周 */
+.f-calendar .f-calendar-week {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+}
+
+.f-calendar .f-calendar-week .f-calendar-week-li {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  color: skyblue;
+  font-weight: bold;
+}
+
+/* 每一天 */
+.f-calendar-day {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.f-calendar-day .f-calendar-day-li {
+  display: inline-flex;
+  flex: 0 0 14.28%;
+  height: 55px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* 当前日期 */
+.f-calendar-day .f-calendar-day-li.f-calendar-day-today {
+  background: rgb(255, 222, 228);
+  border-radius: 5px;
+}
+
+.f-calendar-day .f-calendar-day-li .f-calendar-solar {
+  font-size: 16px;
+}
+
+.f-calendar-day .f-calendar-day-li .f-calendar-lunar {
+  font-size: 12px;
+}
+
+/* 页脚 */
+.f-calendar-footer {
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: #fff;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 14px;
+  box-shadow: 0 2px 13px 0 rgba(255, 255, 255, 0.8)
+}
+
+.f-calendar-footer .f-calendar-footer-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.f-calendar-footer .f-calendar-footer-list li {
+  display: inline-block;
+  width: 45%;
+  font-size: 15px;
+  color: #333;
+}

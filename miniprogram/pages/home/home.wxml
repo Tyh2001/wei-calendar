@@ -1,0 +1,41 @@
+<view class="f-calendar">
+
+  <!-- <view class="f-calendar-header">
+
+</view> -->
+
+  <!-- 周几 -->
+  <ul class="f-calendar-week">
+    <li wx:for="{{weekList}}" wx:key="index" class="f-calendar-week-li">
+      {{ item }}
+    </li>
+  </ul>
+
+  <!-- 每一天 -->
+  <ul class="f-calendar-day">
+    <!-- 遍历出开始的空节点 -->
+    <li class="f-calendar-day-li" wx:for="{{dayWeekNum}}" wx:key="index"></li>
+
+    <!-- 真实日期节点 -->
+    <li wx:for="{{dailyDetailAll}}" wx:key="index" class="f-calendar-day-li {{item.todayDate === date && 'f-calendar-day-today'}}">
+      <span class="f-calendar-solar">{{ item.todayDate }}</span>
+      <span v-if="lunar" class="f-calendar-lunar">
+        {{ item.festival || item.IDayCn }}
+      </span>
+    </li>
+  </ul>
+</view>
+
+<!-- 页脚 -->
+<view class="f-calendar-footer">
+  <ul class="f-calendar-footer-list">
+    <li>日期：{{ dailyDetailAll[date].date }}</li>
+    <li>农历：{{ dailyDetailAll[date].lunarDate }}</li>
+    <li>星期：{{ dailyDetailAll[date].ncWeek }}</li>
+    <li>属性：{{ dailyDetailAll[date].Animal }}</li>
+    <li>星座：{{ dailyDetailAll[date].constellation }}</li>
+    <li>纪年：{{ dailyDetailAll[date].gzYear }}</li>
+    <li>纪月：{{ dailyDetailAll[date].gzMonth }}</li>
+    <li>纪日：{{ dailyDetailAll[date].gzDay }}</li>
+  </ul>
+</view>
