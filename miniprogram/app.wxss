@@ -1,3 +1,4 @@
 page {
   background: pink;
+  padding-bottom: 40px;
 }
