@@ -1,9 +1,15 @@
 <view class="f-calendar">
-  <!-- 头部操作栏 -->
+
   <view class="f-calendar-header">
-    <view class="prevMonth">上个月</view>
-    <view class="goTaday">返回今天</view>
-    <view class="nextMoth">下个月</view>
+    <!-- 今天 -->
+    <view class="f-calendar-now">{{detailDate}}</view>
+
+    <!-- 操作栏 -->
+    <view class="f-calendar-option">
+      <view class="prevMonth" bindtap="prevMonth">上月</view>
+      <view class="goTaday" bindtap="goTaday">今天</view>
+      <view class="nextMoth" bindtap="nextMoth">下月</view>
+    </view>
   </view>
 
   <!-- 周几 -->
@@ -31,13 +37,13 @@
 <!-- 页脚 -->
 <view class="f-calendar-footer">
   <ul class="f-calendar-footer-list">
-    <li>日期：{{ dailyDetailAll[date].date }}</li>
-    <li>农历：{{ dailyDetailAll[date].lunarDate }}</li>
-    <li>星期：{{ dailyDetailAll[date].ncWeek }}</li>
-    <li>属性：{{ dailyDetailAll[date].Animal }}</li>
-    <li>星座：{{ dailyDetailAll[date].constellation }}</li>
-    <li>纪年：{{ dailyDetailAll[date].gzYear }}</li>
-    <li>纪月：{{ dailyDetailAll[date].gzMonth }}</li>
-    <li>纪日：{{ dailyDetailAll[date].gzDay }}</li>
+    <li>日期：{{ dailyDetailAll[date - 1 ].date }}</li>
+    <li>农历：{{ dailyDetailAll[date - 1 ].lunarDate }}</li>
+    <li>星期：{{ dailyDetailAll[date - 1 ].ncWeek }}</li>
+    <li>属性：{{ dailyDetailAll[date - 1 ].Animal }}</li>
+    <li>星座：{{ dailyDetailAll[date - 1 ].constellation }}</li>
+    <li>纪年：{{ dailyDetailAll[date - 1 ].gzYear }}</li>
+    <li>纪月：{{ dailyDetailAll[date - 1 ].gzMonth }}</li>
+    <li>纪日：{{ dailyDetailAll[date - 1 ].gzDay }}</li>
   </ul>
 </view>

@@ -9,14 +9,35 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, .1);
 }
 
-/* 头部操作栏 */
+/* 头部 */
 .f-calendar .f-calendar-header {
-  height: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  height: 40px;
+}
+
+/* 当前日期 */
+.f-calendar .f-calendar-now {
   color: #333;
+}
+
+/* 操作栏 */
+.f-calendar .f-calendar-header .f-calendar-option {
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 12px;
+  color: #333;
+  width: 150px;
+}
+
+.f-calendar .f-calendar-header .f-calendar-option .prevMonth,
+.f-calendar .f-calendar-header .f-calendar-option .goTaday {
+  margin-right: 12px;
 }
 
 /* 每周 */
@@ -65,6 +86,16 @@
 .f-calendar-day .f-calendar-day-li .f-calendar-lunar {
   font-size: 10px;
 }
+
+/* 操作栏 */
+/* .f-calendar .f-calendar-option {
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+  color: #333;
+} */
 
 /* 页脚 */
 .f-calendar-footer {
