@@ -1,12 +1,32 @@
 {
   "pages": [
-    "pages/home/home"
+    "pages/home/home",
+    "pages/event/event"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffbfcd",
     "navigationBarTitleText": "维日历",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#41a9df",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/home.jpg",
+        "selectedIconPath": "/images/home_click.jpg"
+      },
+      {
+        "pagePath": "pages/event/event",
+        "text": "事件",
+        "iconPath": "/images/event.jpg",
+        "selectedIconPath": "/images/event_click.jpg"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
