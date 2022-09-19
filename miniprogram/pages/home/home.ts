@@ -1,6 +1,7 @@
 // pages/home/home.ts
 import { dayMonth, dayWeek } from '../../utils/util'
 import { lunarCalendar } from '../../utils/lunar'
+import type { kunarInterface } from '../../_interface/lunar'
 
 const date: Date = new Date()
 
@@ -14,8 +15,8 @@ Page({
     month: date.getMonth(), // 月
     date: date.getDate(), // 日
     dayMonth: 0, // 每个月有多少天
-    weekList: ['日', '一', '二', '三', '四', '五', '六'], // 周几
-    dailyDetailAll: [], // 详细描述信息
+    weekList: ['日', '一', '二', '三', '四', '五', '六'] as const, // 周几
+    dailyDetailAll: [] as kunarInterface[], // 详细描述信息
     dayWeekNum: 0, // 每月首日是星期几
     dayItemWidth: 0 // 日期每一项的宽度
   },
@@ -24,17 +25,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    const monthNum: number = dayMonth(this.data.year, this.data.month)
-    const dailyDetailAll: object[] = [] // 每天的详细信息
+    const monthNum: number = dayMonth(this.data.year, this.data.month) // 获取这个月有多少天
+    const dailyDetailAll: kunarInterface[] = [] // 每天的详细信息
 
     for (let i = 0; i < monthNum; i++) {
-      const dailyDetai: object = lunarCalendar.solar2lunar(
+      const dailyDetai: kunarInterface = lunarCalendar.solar2lunar(
         this.data.year,
         this.data.month + 1,
         i + 1
-      ) as object
+      ) as kunarInterface
 
       dailyDetai.todayDate = i + 1 // 添加每天的日期
+
+      // 周年日
+      if (this.data.month + 1 === 8 && dailyDetai.todayDate === 15) {
+        dailyDetai.festival = '周年日'
+      }
+
+      // 甜甜生日
+      if (this.data.month + 1 === 9 && dailyDetai.todayDate === 17) {
+        dailyDetai.festival = '甜甜生日'
+      }
+
+      // 维维生日
+      if (this.data.month + 1 === 10 && dailyDetai.todayDate === 18) {
+        dailyDetai.festival = '维维生日'
+      }
+
       dailyDetailAll.push(dailyDetai)
     }
 

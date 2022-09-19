@@ -1,8 +1,10 @@
 <view class="f-calendar">
-
-  <!-- <view class="f-calendar-header">
-
-</view> -->
+  <!-- 头部操作栏 -->
+  <view class="f-calendar-header">
+    <view class="prevMonth">上个月</view>
+    <view class="goTaday">返回今天</view>
+    <view class="nextMoth">下个月</view>
+  </view>
 
   <!-- 周几 -->
   <ul class="f-calendar-week">

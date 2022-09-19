@@ -9,6 +9,16 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, .1);
 }
 
+/* 头部操作栏 */
+.f-calendar .f-calendar-header {
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+  color: #333;
+}
+
 /* 每周 */
 .f-calendar .f-calendar-week {
   display: flex;
@@ -53,7 +63,7 @@
 }
 
 .f-calendar-day .f-calendar-day-li .f-calendar-lunar {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 /* 页脚 */
